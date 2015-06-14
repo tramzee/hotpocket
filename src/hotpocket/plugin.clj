@@ -21,8 +21,9 @@
                     "--since" (str (t/minus (t/now) (t/days 10)))
                     "--date=iso")
         fname (str "resources/hotpocket/" name ".edn")
-        hotpocket (into [] (for [[m hash dt c a] (re-seq #"(.*?) ((?:.*? ){2}.*?) (.*) -- (.*)" (:out r))]
-                             {:hash hash :date dt :comment c :author a}))]
+        git (into [] (for [[m hash dt c a] (re-seq #"(.*?) ((?:.*? ){2}.*?) (.*) -- (.*)" (:out r))]
+                       {:hash hash :date dt :comment c :author a}))
+        hotpocket {:git git :version (:version project)}]
 
     (io/make-parents fname)
     (spit fname (pr-str hotpocket))))
