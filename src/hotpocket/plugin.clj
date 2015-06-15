@@ -8,7 +8,6 @@
 
             [leiningen.deploy :as d]
             [leiningen.hotpocket :as hp]
-            [leiningen.pprint :as lp]
 
             [robert.hooke :as h]))
 
