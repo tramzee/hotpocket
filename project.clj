@@ -1,4 +1,4 @@
-(defproject hotpocket "0.2.1"
+(defproject hotpocket "0.2.2-SNAPSHOT"
   :description "A leiningen plugin to add git commit log as a resource file"
   :url "http://github.com/tramzee/hotpocket"
   :license {:name "Eclipse Public License"
