@@ -33,7 +33,7 @@
   (apply f args))
 
 (defn- add-hotpocket-resource-for-eb
-  [f & [project subtask & args]]
+  [f & [project subtask & _ :as args]]
   (when (= subtask "deploy")
     (make-hotpocket project))
   (apply f args))
